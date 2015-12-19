@@ -12,19 +12,148 @@
   <div class="views">
     <div class="view view-main">
       <div class="pages">
+        /*'Home' page layout*/
         <div data-page="notes-home" class="page navbar-fixed">
+          /*Fixed navbar for 'notes-home' cuz material*/
           <div class="navbar">
             <div class="navbar-inner">
-              <div class="left">
-                <a href="#" class="link">
+              <div class="center">Мои задачи</div>
+              <div class="right">
+                <a href="#notes-add" class="link">
                   <i class="icon icon-plus"></i>
                 </a>
               </div>
-              <div class="center">To-Do List</div>
-              <div class="right"></div>
+            </div>
+          </div>
+          /*End fixed navbar*/
+          <div class="page-content page-content-no-padding-top">
+            <div class="content-block">
+              <div class="list-block">
+                <ul>
+                  <li class="item-content">
+                    <label class="label-checkbox">
+                      <input type="checkbox" name="todo-1" value="Read book">
+                      <div class="item-media">
+                        <i class="icon icon-form-checkbox"></i>
+                      </div>
+                    </label>
+                    <a href="#notes-edit" class="item-link fit-with-label">
+                      <div class="item-inner">
+                        <div class="item-title">Read book</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item-content">
+                    <label class="label-checkbox">
+                      <input type="checkbox" name="todo-2" value="Play Soccer">
+                      <div class="item-media">
+                        <i class="icon icon-form-checkbox"></i>
+                      </div>
+                    </label>
+                    <a href="#notes-edit" class="item-link fit-with-label">
+                      <div class="item-inner">
+                        <div class="item-title">Play Soccer</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="item-content">
+                    <label class="label-checkbox">
+                      <input type="checkbox" name="todo-3" value="Edit note">
+                      <div class="item-media">
+                        <i class="icon icon-form-checkbox"></i>
+                      </div>
+                    </label>
+                    <a href="#notes-edit" class="item-link fit-with-label">
+                      <div class="item-inner">
+                        <div class="item-title">Edit note</div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        /*'Add' page layout*/
+        <div data-page="notes-add" class="page cached navbar-fixed">
+          /*Fixed navbar for 'notes-add' cuz material*/
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#notes-home" class="back link">
+                  <i class="icon icon-back"></i>
+                </a>
+              </div>
+              <div class="center">Добавить задачу</div>
+            </div>
+          </div>
+          /**/
+          /*End fixed navbar*/
+          <div class="page-content">
+            <div class="list-block inset">
+              <ul>
+                <li class="align-top">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Что мне сегодня сделать?"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <a href="" class="button button-fill color-green">Сохранить</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        /**/
+        /*'Edit' page layout*/
+        <div data-page="notes-edit" class="page cached">
+          /*Fixed navbar for 'notes-edit' cuz material*/
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#notes-home" class="back link">
+                  <i class="icon icon-back"></i>
+                </a>
+              </div>
+              <div class="center">Изменить задачу</div>
+            </div>
+          </div>
+          /*End fixed navbar*/
+          <div class="page-content">
+            <div class="list-block inset">
+              <ul>
+                <li class="align-top">
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Что мне сегодня сделать?"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="buttons-row">
+                        <a href="" class="button button-fill color-red">Удалить</a>
+                        <a href="" class="button button-fill color-green">Сохранить</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        /**/
       </div>
     </div>
   </div>

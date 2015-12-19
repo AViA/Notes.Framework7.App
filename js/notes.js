@@ -5,5 +5,5 @@ var notes = new Framework7({
 var $$ = Dom7;
 
 var mainView = notes.addView('.view-main', {
-
+  domCache: true
 });
