@@ -10,8 +10,9 @@ var mainView = notes.addView('.view-main', {
 
 /*Init localStorage*/
 var toDoArr = [];
-var toDoStorage = localStorage.getItem("toDoArray");
-toDoArr = JSON.parse(localStorage.getItem("toDoArray"));
+if (JSON.parse(localStorage.getItem("toDoArray")) !== null) {
+  toDoArr = JSON.parse(localStorage.getItem("toDoArray"));
+}
 
 /* localStorage*/
 function updateStorage () {
