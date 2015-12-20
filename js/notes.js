@@ -20,6 +20,7 @@ function updateStorage () {
   for (var i = 0; i < toDoArr.length; i++) {
     str += JSON.stringify(toDoArr[i]) + ", ";
   }
+  if (toDoArr.length = 1) {str = str.slice(0, -2);}
   str += "]";
   /*notes.alert(str);*/
   localStorage.setItem("toDoArray", str);
@@ -92,20 +93,30 @@ $$(document).on('click', '#note-add', function () {
 });
 
 /*! Handling click event on #to-do to save checked property*/
+var crutch_todoid, crutch_value;
 $$(document).on('click', '#to-do', function () {
   if (this.checked == true) {
     toDoArr[this.name].checked = "checked=\"checked\"";
   } else {
     toDoArr[this.name].checked = "";
   }
+  /*Crutch*/
+  crutch_todoid = this.name;
+  crutch_value = this.value;
   updateStorage();
 });
 
 /*! Assign global variable to store which to-do has been clicked*/
+/*Was forced to use crutch cuz styles change too slow*/
 var todoid;
 $$(document).on('click', '#to-do-edit', function () {
-  todoid = this.parentNode.firstChild.firstChild.name;
-  document.getElementById("textarea-edit").value = this.parentNode.firstChild.firstChild.value;
+  if (this.parentNode.firstChild.firstChild.name === undefined) {
+    todoid = crutch_todoid;
+    document.getElementById("textarea-edit").value = crutch_value;
+  } else {
+    todoid = this.parentNode.firstChild.firstChild.name;
+    document.getElementById("textarea-edit").value = this.parentNode.firstChild.firstChild.value;
+  }
 });
 /*! Handling click event on Save button to save changed value*/
 $$(document).on('click', '#note-save', function () {
