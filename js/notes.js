@@ -60,7 +60,7 @@ function loadLayout () {
 
 /*! Callback for loading to-dos from localStorage when app is loaded*/
 notes.onPageInit('notes-home', function (page) {
-  if (localStorage.getItem("toDoArray") === "[]") {
+  if (localStorage.getItem("toDoArray") === "[]" || localStorage.getItem("toDoArray") === null) {
     /*notes.alert('localStorage is empty');*/
     loadEmptyLayout();
   } else {
@@ -70,7 +70,7 @@ notes.onPageInit('notes-home', function (page) {
 }).trigger();
 /*! Callback for loading to-dos from localStorage when back from other pages*/
 notes.onPageReinit('notes-home', function (page) {
-  if (localStorage.getItem("toDoArray") === "[]") {
+  if (localStorage.getItem("toDoArray") === "[]" || localStorage.getItem("toDoArray") === null) {
     /*notes.alert('localStorage is empty');*/
     loadEmptyLayout();
   } else {
