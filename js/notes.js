@@ -20,7 +20,7 @@ function updateStorage () {
   for (var i = 0; i < toDoArr.length; i++) {
     str += JSON.stringify(toDoArr[i]) + ", ";
   }
-  if (toDoArr.length = 1) {str = str.slice(0, -2);}
+  if (toDoArr.length == 1) {str = str.slice(0, -2);}
   str += "]";
   /*notes.alert(str);*/
   localStorage.setItem("toDoArray", str);
